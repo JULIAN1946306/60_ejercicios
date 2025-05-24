@@ -1,0 +1,563 @@
+#1.Sumar dos números ingresados por el usuario.
+a = int(input("Ingrese el primer número: "))
+b = int(input("Ingrese el segundo número: "))
+a + b
+print("La suma de los números es: ", a+b)
+
+# 2. Convertir grados Celsius a Fahrenheit.
+celcius = float(input("Ingrese la temperatura en grados Celsius: "))
+fahrenheit = (celsius * 9/5) + 32
+print("La temperatura en grados Fahrenheit es: ", fahrenheit)
+
+#3. Determinar si un número es par o impar.
+numero = int(input("Ingrese un número: "))
+if numero % 2 == 0:
+    print("El número es par.")
+
+#4. Calcular el área de un círculo con un radio dado.
+radio = float(input("Ingrese el radio del círculo: "))
+area = 3.1416 * radio ** 2
+print("El área del círculo es: ", area)
+
+#5.Determinar si un número es positivo, negativo o cero.
+numero = float(input("Ingrese un número: "))
+if numero > 0:
+    print("El número es positivo.")
+elif numero < 0:
+    print("El número es negativo.")
+else:
+    print("El número es cero.")
+
+#6.Encontrar el mayor de tres números ingresados.
+numero1 = float(input("Ingrese el primer número: "))
+numero2 = float(input("Ingrese el segundo número: "))
+numero3 = float(input("Ingrese el tercer número: "))
+if numero1 > numero2 and numero1 > numero3:
+    print("El mayor número es:", numero1)
+elif numero2 > numero1 and numero2 > numero3:
+    print("El mayor número es:", numero2)
+else:
+    print("El mayor número es:", numero3)
+
+#7.Mostrar la tabla de multiplicar de un número.
+numero = int(input("Ingrese un número: "))
+for i in range(1, 11):
+    print(numero, "x", i, "=", numero * i)
+    print("")
+
+#8. Calcular el factorial de un número.
+numero = int(input("Ingrese un número: "))
+factorial = 1
+for i in range(1, numero + 1):
+        factorial *= i
+        print("El factorial de", numero, "es:", factorial)
+        print("")
+
+#9. Sumar los dígitos de un número.
+numero = int(input("Ingrese un número: "))
+suma = 0
+while numero > 0:
+    suma += numero % 10
+    numero //= 10
+    print("La suma de los dígitos es:", suma)
+
+#10. Verificar si un número es primo.
+numero = int(input("Ingrese un número: "))
+if numero > 1:
+    for i in range(2, numero):
+        if numero % i == 0:
+            print("El número no es primo.")
+            break
+    else:
+        print("El número es primo.")
+
+#11. Contar los dígitos de un número.
+numero = int(input("Ingrese un número: "))
+numero = abs(numero)
+cantidad_digitos = len(str(numero))
+print("El número tiene", cantidad_digitos)
+
+#12.Encontrar el mínimo y máximo en una lista de números.
+entrada = input("Ingrese una lista de números separados por comas: ")
+numero = [int(numero) for numero in entrada.split(",")]
+min = min(numero)
+max = max(numero)
+print("El mínimo es:", min)
+print("El máximo es:", max)
+
+#13.Calcular el promedio de una lista de números.
+entrada = input("Ingrese una lista de números separados por comas: ")
+numero = [float(n) for n in entrada.split(",")]
+suma = sum(numero)
+cantidad = len(numero)
+promedio = suma / cantidad
+print("El promedio es: ", promedio)
+
+#14. Contar cuántos números pares e impares hay en una lista.
+entrada = input("Ingrese una lista de números separados por comas: ")
+numero = [int(n.strip()) for n in entrada.split(",")]
+pares = 0
+impares = 0
+for num in numero:
+    if num % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+        print("Pares:", pares)
+        print("Impares:", impares)
+
+#15. Ordenar una lista de números de menor a mayor.
+entrada = input("Ingrese una lista de números separados por comas: ")
+numero = [int(n.strip()) for n in entrada.split(",")]
+ordenado = sorted(numero)
+print("Lista ordenada:",ordenado)
+
+#16.Convertir un número decimal a binario.
+numero = int(input("Ingrese un número decimal: "))
+binario = bin(numero)[2:]
+print("El número binario es:", binario)
+
+#17. Generar un número aleatorio entre 1 y 100.
+entrada = input("Escribe un numero y presiona Enter: ")
+suma = 0
+for letra in entrada:
+    suma += ord(letra)
+numero_aleatorio = (suma % 100) + 1
+print("Número aleatorio generado: ", numero_aleatorio)
+
+#18. Simular el lanzamiento de un dado.
+entrada = input("Presiona Enter para lanzar el dado: ")
+suma = 0
+for letra in entrada:
+    suma += ord(letra)
+dado = (suma % 6) + 1
+print("Resultado del dado: ", dado)
+
+#19. Encontrar el segundo número más grande en una lista.
+entrada = input("Ingrese una lista de números separados por comas: ")
+numero = [int(n.strip()) for n in entrada.split(",")]
+if len(set(numero)) < 2:
+    print("Debe haber al menos dos números diferentes.")
+else:
+    mayor = segundo_mayor = float('-inf')
+    for num in numero:
+        if num > mayor:
+            segundo_mayor = mayor
+            mayor = num
+        elif num > segundo_mayor and num != mayor:
+            segundo_mayor = num
+
+    print("El segundo número más grande es: ", segundo_mayor)
+
+#20.Implementar una calculadora simple con +, −, *, /.
+num1 = float(input("Ingrese el primer número: "))
+operador = input("Ingrese el operador (+, -, *, /): ")
+num2 = float(input("Ingrese el segundo número: "))
+if operador == "+":
+    resultado = num1 + num2
+    print("El resultado es: ", resultado)
+elif operador == "-":
+    resultado = num1 - num2
+    print("El resultado es: ", resultado)
+elif operador == "*":
+    resultado = num1 * num2
+    print("El resultado es: ", resultado)
+elif operador == "/":
+    if num2 != 0:
+        resultado = num1 / num2
+        print("El resultado es: ", resultado)
+    else:
+        print("Error: No se puede dividir por cero.")
+
+#21. Contar cuántas veces aparece un número en una lista.
+entrada = input("Ingrese una lista de números separados por comas: ")
+numero = [int(n.strip()) for n in entrada.split(",")]
+numero_buscar = int(input("Ingrese el número a buscar: "))
+contador = numero.count(numero_buscar)
+print("El número", numero_buscar, "aparece", contador, "veces.")
+
+#22. Encontrar el número que más se repite en una lista.
+entrada = input("Ingresa una lista de números separados por comas: ")
+numeros = [float(n.strip()) for n in entrada.split(",")]
+buscar = float(input("¿Qué número deseas contar?: "))
+contador = 0
+for num in numeros:
+    if num == buscar:
+        contador += 1
+print(f"El número {buscar} aparece {contador} veces en la lista.")
+
+#23.Imprimir un patrón de pirámide con asteriscos (*).
+numero = int(input("Ingrese el número de filas para la pirámide: "))
+for i in range(1, numero + 1):
+    espacios = " " * (numero - i)
+    asteriscos = "*" * (2 * i - 1)
+    print(espacios + asteriscos)
+#24. Implementar el cifrado César.
+texto = input("Ingrese el texto a cifrar: ")
+desplazamiento = int(input("Ingrese el desplazamiento: "))
+cifrado = ""
+for letra in texto: 
+    if letra.isalpha():
+        if letra.islower():
+            nueva_letra = chr((ord(letra) - ord('a') + desplazamiento) % 26 + ord('a'))
+        else:
+            nueva_letra = chr((ord(letra) - ord('A') + desplazamiento) % 26 + ord('A'))
+        cifrado += nueva_letra
+    else:
+        cifrado += letra
+        print("Texto cifrado:", cifrado)
+
+#25.Crear una función que invierta una lista sin usar .reverse().
+lista = [1, 2, 3, 4, 5]
+invertida = []
+for i in range(len(lista) - 1, -1, -1):
+    invertida.append(lista[i])
+
+print(f"Lista original: {lista}")
+print("Lista invertida: ",invertida)
+
+#26.Implementar un generador de contraseñas.
+minusculas = 'abcdefghijklmnopqrstuvwxyz'
+mayusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+numeros = '0123456789'
+simbolos = '!@#$%^&*()_+-=[]{}|;:,.<>?/'
+todos = minusculas + mayusculas + numeros + simbolos
+longitud = 12
+contrasena = ''
+i = 0
+while i < longitud:
+    index = (i * 7 + 13) % len(todos)
+    contrasena += todos[index]
+    i += 1
+print("Tu nueva contraseña es:", contrasena)
+
+#27.Simular el juego de piedra, papel o tijeras.
+opciones = ['piedra', 'papel', 'tijeras']
+print("Jugador 1: elige piedra, papel o tijeras")
+jugador1 = input().lower()
+print("Jugador 2: elige piedra, papel o tijeras")
+jugador2 = input().lower()
+if jugador1 == jugador2:
+    print("¡Empate!")
+elif (jugador1 == 'piedra' and jugador2 == 'tijeras') or \
+     (jugador1 == 'tijeras' and jugador2 == 'papel') or \
+     (jugador1 == 'papel' and jugador2 == 'piedra'):
+    print("¡Jugador 1 gana!")
+elif (jugador2 == 'piedra' and jugador1 == 'tijeras') or \
+     (jugador2 == 'tijeras' and jugador1 == 'papel') or \
+     (jugador2 == 'papel' and jugador1 == 'piedra'):
+    print("¡Jugador 2 gana!")
+else:
+    print("Opción no válida. Elige entre piedra, papel o tijeras.")
+
+print("Sistema de Notas para Estudiantes")
+
+nombre = input("Ingresa el nombre del estudiante: ")
+
+materias = int(input("¿Cuántas materias tiene el estudiante? "))
+
+i = 0
+total = 0
+while i < materias:
+    nota = float(input("Ingresa la nota de la materia " + str(i + 1) + ": "))
+    total += nota
+    i += 1
+promedio = total / materias
+
+print("Estudiante:", nombre)
+print("Promedio de notas:", round(promedio, 2))
+if promedio >= 6:
+    print("¡Felicidades! El estudiante ha aprobado.")
+else:
+    print("El estudiante no ha aprobado. ¡A seguir estudiando!")
+
+#28.Encontrar el número más grande de una lista.
+entrada = input("Ingresa una lista de números separados por comas: ")
+numeros = [float(n.strip()) for n in entrada.split(",")]
+mayor = numeros[0]
+for num in numeros:
+        if num > mayor:
+            mayor = num
+            print("El número más grande es:", mayor)
+#29. Encontrar el número más pequeño de una lista.
+entrada = input("Ingresa una lista de números separados por comas: ")
+numeros = [float(n.strip()) for n in entrada.split(",")]
+menor = numeros[0]
+for num in numeros:
+    if num < menor:
+        menor = num
+        print("El número más pequeño es:", menor)
+#30.Quitar el primer elemento de una lista.
+lista = input("Ingresa una lista de números separados por comas: ")
+numeros = [float(n.strip()) for n in lista.split(",")]
+numeros.pop(0)
+print("Lista después de quitar el primer elemento:", numeros)
+
+#31. abecedario
+print("el resultado del bucle es:")
+for i in range(26):
+    print(chr(97+i), chr(65 + i))
+
+#32.Calcular el promedio de una lista.
+entrada = input("Ingresa números separados por espacio: ")
+numeros_texto = entrada.split()
+numeros = []
+i = 0
+while i < len(numeros_texto):
+    numeros.append(float(numeros_texto[i]))
+    i += 1
+i = 0
+suma = 0
+while i < len(numeros):
+    suma += numeros[i]
+    i += 1
+promedio = suma / len(numeros)
+print("El promedio es:", round(promedio, 2))
+
+#33. Calcular el volumen de una esfera.
+radio = float(input("Ingresa el radio de la esfera: "))
+pi = 3.1415
+volumen = (4/3) * pi * radio**3
+print("El volumen de la esfera es:", round(volumen, 2))
+
+#34.Calcular el área de un triángulo.
+lado = float(input("Ingresa la longitud del lado del triángulo: "))
+altura = float(input("Ingresa la altura del triángulo: "))
+area = (lado * altura) / 2       
+print("El área del triángulo es:", round(area, 2))
+
+#35. Número de Euler.
+n = 100000
+e = (1 + 1/n) ** n
+print("El número de Euler (e) es aproximadamente:",)
+
+#36. Determinar todos los pares para N números.
+n = int(input("Ingrese el número total de elementos: "))
+numeros = list(range(1, n + 1))
+print(f"\nTodos los pares posibles para {n} números:")
+for i in range(n):
+    for j in range(i + 1, n):
+        print(f"({numeros[i]}, {numeros[j]})")
+        
+#37. Determinar todos los primos para N números.
+n = int(input("Ingrese el límite superior (N): "))
+
+print("Números primos hasta", n)
+if n >= 2:
+    print(2)  
+for num in range(3, n + 1, 2):
+    es_primo = True
+    for i in range(3, int(num**0.5) + 1, 2):
+        if num % i == 0:
+            es_primo = False
+            break
+    if es_primo:
+        print(num)
+
+#38. Cálculo de π.
+terminos = int(input("Ingrese el número de términos para la serie: "))
+pi = 0.0
+for k in range(terminos):
+    pi += (-1)**k / (2*k + 1)
+pi *= 4
+print(f"Valor aproximado de π con {terminos} términos: {pi}")
+
+#39. Contar el número de pares en una lista.
+entrada = input("Ingrese números separados por espacios: ")
+numeros = [int(num) for num in entrada.split()]
+contador = sum(1 for num in numeros if num % 2 == 0)
+
+print("Hay",contador, "números pares en la lista")
+
+#40.Suma de cuadrados de los números impares hasta N.
+n = int(input("Ingrese un número: "))
+suma = sum(i**2 for i in range(1, n + 1, 2))    
+print("La suma de los cuadrados de los números impares hasta", n, "es:", suma)
+#41. Obtener el primer dígito de un número.
+numero = int(input("Ingrese un número: "))
+while numero >= 10:
+        numero //= 10
+        print("El primer dígito del número es:", numero)
+
+#42.Obtener el último dígito de un número.
+numero = int(input("Ingrese un número: "))
+ultimo_digito = int(str(numero)[-1])
+print("El último dígito es: ",ultimo_digito)
+
+#43. Imprimir un triángulo rectángulo de *.
+n = int(input("Ingrese el número de filas: "))
+for i in range(1, n + 1):        
+    print('*' * i)
+
+#44. Imprimir un triángulo rectángulo invertido de *.
+n = int(input("Ingrese el número de filas: "))
+for i in range(n, 0, -1):
+    print('*' * i)
+n = int(input("Ingrese el número de filas: "))
+for i in range(1, n + 1):
+        print(' ' * (n - i) + '*' * (2 * i - 1))   
+for i in range(n - 1, 0, -1):
+        print(' ' * (n - i) + '*' * (2 * i - 1))
+
+#45.Imprimir un cuadrado de *.
+n = int(input("Ingrese el tamaño del cuadrado: "))
+for i in range(n):
+    print('*' * n)
+
+#46.Imprimir un patrón en forma de "X" con * (para N impar).
+n = int(input("Ingrese un número impar para el tamaño de la X: "))
+if n % 2 == 0:
+    print("El número debe ser impar")
+else:
+    for i in range(n):
+        for j in range(n):
+            if i == j or i + j == n - 1:
+                print('*', end='')
+            else:
+                print(' ', end='')
+        print() 
+#47.Imprimir un patrón en forma de "Z" con *.
+n = int(input("Ingrese el tamaño de la Z (mínimo 3): "))
+
+if n < 3:
+    print("El tamaño debe ser al menos 3")
+else:
+    print('*' * n)
+
+    for i in range(1, n-1):
+        print(' ' * (n - 1 - i) + '*')
+    print('*' * n)
+#48.Calcular el área de un triángulo dado tres lados (fórmula de Herón).
+    a = float(input("Ingrese la longitud del primer lado: "))
+    b = float(input("Ingrese la longitud del segundo lado: "))
+    c = float(input("Ingrese la longitud del tercer lado: "))
+    s = (a + b + c) / 2
+    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5
+    print("El área del triángulo es:", area)
+#49.Generar los primeros n números primos.
+n = int(input("Ingrese el número de primos a generar: "))
+primos = []
+num = 2
+while len(primos) < n:
+    es_primo = True
+    for primo in primos:
+        if num % primo == 0:
+             es_primo = False
+             break
+    if es_primo:
+        primos.append(num)
+    num += 1
+    print("Los primeros", n, "números primos son:", primos)
+#50.Sumar las fracciones de una lista.
+entrada = input("Ingrese fracciones separadas por comas (por ejemplo, 1/2, 3/4): ")
+fracciones = entrada.split(",")
+suma = 0
+for fraccion in fracciones:
+    numerador, denominador = map(int, fraccion.split('/'))
+    suma += numerador / denominador
+    print("La suma de las fracciones es:", suma)
+
+#51.Determinar si un número es cuadrado perfecto usando raíces cuadradas.
+numero = int(input("Ingrese un número: "))
+raiz = int(numero ** 0.5)
+if raiz * raiz == numero:
+    print(numero, "es un cuadrado perfecto.")
+else:
+    print(numero, "no es un cuadrado perfecto.")
+#52.Calcular la suma de los divisores de un número.
+    numero = int(input("Ingrese un número: "))
+    suma = sum(i for i in range(1, numero + 1) if numero % i == 0)
+    print("La suma de los divisores de", numero, "es:", suma)    
+#53.Verificar si un número es un número triangular.
+numero = int(input("Ingrese un número: "))
+discriminante = 1 + 8 * numero
+raiz = discriminante ** 0.5
+if raiz == int(raiz) and (-1 + raiz) % 2 == 0 and numero >= 0:
+    print(f"{numero} SÍ es un número triangular")
+else:
+    print(f"{numero} NO es un número triangular")
+
+#54. Calcular el área de un círculo dado el perímetro.
+perimetro = float(input("Ingrese el perímetro del círculo: "))
+radio = perimetro / (2 * 3.14159)
+area = 3.14159 * radio ** 2
+print("El área del círculo es:", area)
+#55.Calcular el área de un triángulo rectángulo dado los catetos.
+cateto1 = float(input("Ingrese la longitud del primer cateto: "))
+cateto2 = float(input("Ingrese la longitud del segundo cateto: "))
+area = 0.5 * cateto1 * cateto2
+print("El área del triángulo rectángulo es:", area)
+#56.Generar una lista de números primos dentro de un rango dado.
+inicio = int(input("Ingrese el inicio del rango: "))
+fin = int(input("Ingrese el fin del rango: "))
+primos = []
+if inicio <= 2:
+    primos.append(2)
+    inicio = 3
+elif inicio % 2 == 0:
+    inicio += 1 
+for num in range(inicio, fin + 1, 2):
+    es_primo = True
+    limite = int(num ** 0.5) + 1
+    for divisor in range(3, limite, 2):
+        if num % divisor == 0:
+            es_primo = False
+            break
+    if es_primo:
+        primos.append(num)
+print(f"Números primos entre {inicio-2 if inicio ==3 else inicio} y {fin}:")
+print(primos)
+
+#57.Verificar si un número es un número de Mersenne.
+numero = int(input("Ingrese un número para verificar si es de Mersenne: "))
+if numero <= 1 or numero % 2 == 0:
+    print(f"{numero} NO es un número de Mersenne")
+else:
+    m = numero + 1
+    if (m & (m - 1)) != 0:
+        print(f"{numero} NO es un número de Mersenne")
+    else:
+        p = 0
+        temp = m
+        while temp != 1:
+             temp >>= 1
+             p += 1
+        if p < 2:
+                print(f"{numero} NO es un número de Mersenne")
+        else:
+                es_primo = True
+                for i in range(2, int(p**0.5) + 1):
+                    if p % i == 0:
+                        es_primo = False
+                        break
+                if es_primo:
+                    print(f"{numero} SÍ es un número de Mersenne (2^{p} - 1)")
+                else:
+                    print(numero, "NO es un número de Mersenne")
+#58.Calcular la longitud de la circunferencia de un círculo dada su área.
+pi = 3.1415
+area = float(input("Ingrese el área del círculo: "))
+radio = (area / pi) ** 0.5
+circunferencia = 2 * pi * radio
+print("La longitud de la circunferencia es:", round(circunferencia, 4))
+
+#59.Realice un programa que muestre la dirección de memoria y el tamaño de una variable.
+valor = input("Ingrese un valor: ")
+print("Información de la variable:")
+print("Valor:", valor)
+print("Tipo:", type(valor))
+print("Dirección:", hex(id(valor)))
+print("Tamaño:", valor.__sizeof__(), "bytes")
+
+#60.Intercambiar dos números utilizando punteros
+a = 5
+b = 10
+print("Antes del intercambio:")
+print("a =", a)
+print("b =", b)
+temp = a
+a = b
+b = temp
+print("Después del intercambio:")
+print("a =", a)
+print("b =", b)
