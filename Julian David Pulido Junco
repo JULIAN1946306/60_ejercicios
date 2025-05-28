@@ -6,7 +6,7 @@ print("La suma de los números es: ", suma)
 
 # 2. Convertir grados Celsius a Fahrenheit.
 celcius = float(input("Ingrese la temperatura en grados Celsius: "))
-fahrenheit = (celsius * 9/5) + 32
+fahrenheit = (celcius * 9/5) + 32
 print("La temperatura en grados Fahrenheit es: ", fahrenheit)
 
 #3. Determinar si un número es par o impar.
