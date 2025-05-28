@@ -51,7 +51,6 @@ factorial = 1
 for i in range(1, numero + 1):
         factorial *= i
         print("El factorial de", numero, "es:", factorial)
-        print("")
 
 #9. Sumar los dígitos de un número.
 numero = int(input("Ingrese un número: "))
@@ -184,7 +183,7 @@ contador = 0
 for num in numeros:
     if num == buscar:
         contador += 1
-print(f"El número {buscar} aparece {contador} veces en la lista.")
+print("El número", buscar, "aparece", contador, "veces en la lista.")
 
 #23.Imprimir un patrón de pirámide con asteriscos (*).
 numero = int(input("Ingrese el número de filas para la pirámide: "))
