@@ -1,8 +1,8 @@
 #1.Sumar dos números ingresados por el usuario.
 a = int(input("Ingrese el primer número: "))
 b = int(input("Ingrese el segundo número: "))
-a + b
-print("La suma de los números es: ", a+b)
+suma = a + b
+print("La suma de los números es: ", suma)
 
 # 2. Convertir grados Celsius a Fahrenheit.
 celcius = float(input("Ingrese la temperatura en grados Celsius: "))
