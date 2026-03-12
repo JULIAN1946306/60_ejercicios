@@ -39,11 +39,10 @@ class CircularList:
 
     # insert the element to the desired index of the collection
     def add(self, index, element):
-        if not self.isEmpty():
-            pos = index % len(self._data)
+        if self.isEmpty():
+            self._data.insert(0, element)
         else:
-            pos = 0
-        self._data.insert(pos, element)
+            self._data.insert(index % len(self._data), element)
     
     # remove an element in the collection by its value
     def remove(self, element):
